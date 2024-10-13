@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome CSS Responsive Navigation menus  </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <header>
+        <input type ="checkbox" name ="" id ="chk1">
+        <div class="logo"><h1>YP Nav bar</h1></div>
+            <div class="search-box">
+                <form>
+                    <input type ="text" name ="search" id ="srch" placeholder="Search">
+                    <button type ="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><li>
+                    <a href="#">Product</a>
+                    <select id="product-select">
+                      <option value="">Select Product</option>
+                      <option value="hardware">Hardware</option>
+                      <option value="software">Software</option>
+                    </select>
+                  </li>
+                  <li>
+                    <select id="option-select" style="display: none;">
+                      <option value="laptops">Laptops</option>
+                      <option value="accessories">Accessories</option>
+                    </select>
+                  </li>
+                  
+                  <script>
+                    document.getElementById('product-select').addEventListener('change', function () {
+                      var optionSelect = document.getElementById('option-select');
+                      if (this.value) {
+                        optionSelect.style.display = 'block';
+                      } else {
+                        optionSelect.style.display = 'none';
+                      }
+                    });
+                  </script>
+                </a></li>
+                <ul>
+                    <li>
+                      <a href="#">Solutions</a>
+                      <select id="solutions-select">
+                        <option value="">Select Solution</option>
+                        <option value="cloud">Cloud</option>
+                        <option value="ai">AI</option>
+                      </select>
+                    </li>
+                    <li>
+                      <select id="cloud-options" style="display:none;">
+                        <option value="cloud">Cloud</option>
+                      </select>
+                      <select id="ai-options" style="display:none;">
+                        <option value="ml">Machine Learning</option>
+                        <option value="nlp">Natural Language Processing</option>
+                      </select>
+                    </li>
+                    <li>
+                      <a href="#">Support</a>
+                      <select>
+                        <option value="documentation">Documentation</option>
+                        <option value="forums">Forums</option>
+                      </select>
+                    </li>
+                  </ul>
+                  
+                  <script>
+                    document.getElementById('solutions-select').addEventListener('change', function () {
+                      var cloudOptions = document.getElementById('cloud-options');
+                      var aiOptions = document.getElementById('ai-options');
+                      cloudOptions.style.display = 'none';
+                      aiOptions.style.display = 'none';
+                  
+                      if (this.value === 'cloud') {
+                        cloudOptions.style.display = 'block';
+                      } else if (this.value === 'ai') {
+                        aiOptions.style.display = 'block';
+                      }
+                    });
+                  </script>
+                  
+                <li>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                      
+                </li>
+            </ul>
+            <div class="menu">
+                <label for="chk1">
+                    <i class="fa fa-bars"></i>
+                </label>
+            </div>
+    </header>
